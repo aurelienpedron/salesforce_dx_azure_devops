@@ -16,7 +16,11 @@ steps:
     sudo ./sfdx/install
     echo 'npm update'
     sudo npm update
+    
+    mkdir keys
+    echo 'make hub key'
+    echo ${theSFtoken} | xxd -r -ps >> keys/hub.key
+    openssl rsa -in keys/hub.key -check -noout
+    
     echo 'sfdx'
     sudo sfdx force:org -h
-
-       
