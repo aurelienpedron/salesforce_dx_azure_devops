@@ -11,9 +11,10 @@ steps:
   displayName: 'Run a one-line script'
 
 - script: |
+    echo 'install DX CLI'
     wget -qO- https://developer.salesforce.com/media/salesforce-cli/sfdx-v5.7.6-d42cf65-linux-amd64.tar.xz | tar xJf -
     sudo ./sfdx/install
-    uname -a
+    echo 'npm update'
     sudo npm update
     echo 'sfdx'
     sudo sfdx force:org -h
