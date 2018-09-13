@@ -13,10 +13,11 @@ steps:
 - script: |
     wget -qO- https://developer.salesforce.com/media/salesforce-cli/sfdx-v5.7.6-d42cf65-linux-amd64.tar.xz | tar xJf -
     sudo ./sfdx/install
-    mkdir tmp
+    mkdir keys
     echo 'make hub key'
     echo $HUB_SERVER_KEY_HEX | xxd -r -ps >> keys/hub.key
     openssl rsa -in keys/hub.key -check -noout
+    echo 'sfdx'
     sfdx force:auth:jwt:grant --clientid $HUB_CONSUMER_KEY --jwtkeyfile keys/hub.key --username $HUB_SFDC_USER --setdefaultdevhubusername -a hub
 
        
