@@ -19,8 +19,8 @@ steps:
     
     mkdir keys
     echo 'make hub key'
-    echo ${theSFtoken}
-    echo ${theSFtoken} | xxd -r -ps >> keys/hub.key
+    echo $(theSFtoken)
+    echo $(theSFtoken) | xxd -r -ps >> keys/hub.key
     openssl rsa -in keys/hub.key -check -noout
     
     echo 'sfdx'
