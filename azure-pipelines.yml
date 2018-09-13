@@ -12,7 +12,7 @@ steps:
 
 - script: |
     wget -qO- https://developer.salesforce.com/media/salesforce-cli/sfdx-v5.7.6-d42cf65-linux-amd64.tar.xz | tar xJf -
-    ./sfdx/install
+    sudo ./sfdx/install
     mkdir tmp
     echo 'make hub key'
     echo $HUB_SERVER_KEY_HEX | xxd -r -ps >> keys/hub.key
