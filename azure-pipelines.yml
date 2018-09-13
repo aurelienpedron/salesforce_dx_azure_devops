@@ -11,7 +11,7 @@ steps:
   displayName: 'Run a one-line script'
 
 - script: |
-    npm install --global force-dev-tool
+    sudo npm install --global force-dev-tool
     force-dev-tool remote add mydev user pass --default
     force-dev-tool login mydev
 
