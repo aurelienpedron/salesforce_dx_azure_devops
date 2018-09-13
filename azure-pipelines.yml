@@ -26,4 +26,4 @@ steps:
     echo 'sfdx'
     sudo sfdx force:org -h
     
-    ./deployPackage.sh
+    sudo ./deployPackage.sh
