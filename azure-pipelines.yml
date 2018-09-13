@@ -11,8 +11,7 @@ steps:
   displayName: 'Run a one-line script'
 
 - script: |
-    sudo npm install --global force-dev-tool
-    force-dev-tool remote add mydev user pass --default
-    force-dev-tool login mydev
+    wget -qO- https://developer.salesforce.com/media/salesforce-cli/sfdx-v5.7.6-d42cf65-linux-amd64.tar.xz | tar xJf -
+    ./sfdx/install
 
        
