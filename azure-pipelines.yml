@@ -22,7 +22,7 @@ steps:
     openssl rsa -in keys/hub.key -check -noout
     
     echo 'sfdx'
-    sudo sfdx force:org -h 
+    sudo sfdx force:org -h  
 
   displayName: 'Install Salesforce Envrironment'
   
