@@ -1,0 +1,1 @@
+To allow build service account to access a securefile, add the user Project Collection Build Service Accounts as reader of the secure file

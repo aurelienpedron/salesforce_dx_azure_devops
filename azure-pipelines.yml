@@ -20,7 +20,7 @@ steps:
     sudo npm update
      
     echo 'secure file path'     
-    echo $env:DOWNLOADSECUREFILE1_SECUREFILEPATH
+    echo $env:DOWNLOADSECUREFILE_SECUREFILEPATH
     
     echo 'sfdx'
     sudo sfdx force:org -h  
