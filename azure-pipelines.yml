@@ -8,21 +8,22 @@ pool:
 
 steps:
 
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: 'Scrum'
+    
 - script: |
     echo 'install DX CLI'
     wget -qO- https://developer.salesforce.com/media/salesforce-cli/sfdx-v5.7.6-d42cf65-linux-amd64.tar.xz | tar xJf -
     sudo ./sfdx/install
     echo 'npm update'
     sudo npm update
-    
-    mkdir keys
-    echo 'make hub key'
-    echo $(theSFtoken)
-    echo $(theSFtoken) | xxd -r -ps >> keys/hub.key
-    openssl rsa -in keys/hub.key -check -noout
+     
+    echo 'secure file path'     
+    echo $env:DOWNLOADSECUREFILE1_SECUREFILEPATH
     
     echo 'sfdx'
-    sudo sfdx force:org -h 
+    sudo sfdx force:org -h  
 
   displayName: 'Install Salesforce Envrironment'
   
