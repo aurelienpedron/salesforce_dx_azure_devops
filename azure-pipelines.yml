@@ -31,7 +31,7 @@ steps:
    sfdx force:auth:jwt:grant --clientid 3MVG9YDQS5WtC11p3YwwrQRFrZNWVj3tY5Kl7Ur9Hc.V2MkjTwUCwXkucLtMhQqScu5qOh9oSjJQVF_.hFhP4 --jwtkeyfile$env:DOWNLOADSECUREFILE_SECUREFILEPATH --username aurelien.pedron@sira.nsw.gov.au.siracicdtest --setdefaultdevhubusername -a hub  
 
    
-   - task: ShellScript@1
+- task: ShellScript@1
   inputs:
     scriptPath: ./deployPackage.sh
 
