@@ -10,7 +10,7 @@ steps:
 
 - task: DownloadSecureFile@1
   inputs:
-    secureFile: "f141f1e5-8f38-4b75-95c3-bafee10c3ca1"
+    secureFile: 'Scrum.mm'
     
 - script: |
     echo 'install DX CLI'
