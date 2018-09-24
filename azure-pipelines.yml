@@ -27,7 +27,8 @@ steps:
 
   displayName: 'Install Salesforce Envrironment'
   
-- script: |
-     ./deployPackage.sh
+- task: ShellScript@1
+  inputs:
+    scriptPath: ./deployPackage.sh
 
   displayName: 'Deploy package to SF'   
