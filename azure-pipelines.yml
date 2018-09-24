@@ -30,4 +30,4 @@ steps:
 - script: |
      ./deployPackage.sh
 
-  displayName: 'Deploy package to SF'
+  displayName: 'Deploy package to SF' 
