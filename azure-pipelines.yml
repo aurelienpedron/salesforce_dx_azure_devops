@@ -7,11 +7,26 @@ pool:
   vmImage: 'Ubuntu 16.04'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
 
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
-      
+    echo 'install DX CLI'
+    wget -qO- https://developer.salesforce.com/media/salesforce-cli/sfdx-v5.7.6-d42cf65-linux-amd64.tar.xz | tar xJf -
+    sudo ./sfdx/install
+    echo 'npm update'
+    sudo npm update
+    
+    mkdir keys
+    echo 'make hub key'
+    echo $(theSFtoken)
+    echo $(theSFtoken) | xxd -r -ps >> keys/hub.key
+    openssl rsa -in keys/hub.key -check -noout
+    
+    echo 'sfdx'
+    sudo sfdx force:org -h 
+
+  displayName: 'Install Salesforce Envrironment'
+  
+- script: |
+     ./deployPackage.sh
+
+  displayName: 'Deploy package to SF'
